@@ -1,0 +1,19 @@
+<template>
+  <div>
+      <c-products-filter onfilterresults={handleSearchClick}></c-products-filter>
+
+      <!-- Vérifie si la liste de produits est vide -->
+      <template if:true={isProductListEmpty}>
+        <img  class="slds-align_absolute-center" src="https://cdn2.iconfinder.com/data/icons/essential-ui-1/32/not-found-512.png" />
+
+      </template>
+
+      <lightning-layout horizontal-align="center" multiple-rows>
+          <template for:each={products} for:item="product">
+              <lightning-layout-item key={product.product.Id} padding="around-small" size="12" small-device-size="6" medium-device-size="4" large-device-size="3">
+                  <c-product-tile product={product}></c-product-tile>
+              </lightning-layout-item>
+          </template>
+      </lightning-layout>
+  </div>
+</template>

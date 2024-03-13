@@ -1,0 +1,38 @@
+.tile {
+    padding: 8px ;
+  	height: 400px;
+    width:200px ;
+    
+    border: 1px solid rgb(192,192,192);
+    border-radius: 10px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+    
+  }
+ 
+  .title {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 11px;
+}
+
+.priceTitle{
+      color: red;
+      font-weight: bold;
+       width:50%;
+       
+
+}
+.gray-background{
+  opacity: 0.1;
+
+}
+.image{
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+}

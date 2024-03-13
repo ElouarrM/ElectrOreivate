@@ -1,0 +1,74 @@
+.text{
+	color: green ;
+	font-weight: bold;
+}
+.total-amount {
+  background-color: #e0f0e3; /* Reddish background */
+  color:green;
+  border-radius: 4px; 
+  padding: 5px 20px; 
+  font-weight: bold; 
+  justify-content: space-between;
+  //align-items: center;
+  display: flex;
+
+  font-size: 1.25em;
+  width: 100%;
+    margin-bottom:10px;
+
+}
+.total-amountD {
+  background-color: green; /* Reddish background */
+  color:white;
+  border: 1px solid green;
+  border-radius: 55px; 
+  padding: 8px 94px; 
+  font-weight: bold; 
+  justify-content: space-between;
+  //align-items: center;
+  
+  display: flex;
+  font-size: 1.25em;
+  width: 50%;
+  margin-bottom:10px;
+}
+.total-amountD:hover{
+  background-color: #5abf6d;
+  color: black;
+}
+
+.total-amountC {
+  background-color: #fde0e0; /* Reddish background */
+  color:red;
+  border-radius: 4px; 
+  padding: 10px 20px; 
+  font-weight: bold; 
+  justify-content: space-between;
+  //align-items: center;
+  display: flex;
+  font-size: 1.25em;
+  width: 100%;
+  margin-bottom:10px;
+}
+
+.discount {
+     background-color: #ece6ff; /* Reddish background */
+  color:	#304674;
+  border-radius: 4px; 
+  padding: 10px 20px; 
+  font-weight: bold; 
+  justify-content: space-between;
+  //align-items: center;
+  display: flex;
+  font-size: 1.25em;
+  width: 100%;
+  margin-bottom:10px;
+}
+.total-amount .title {
+  margin-right: 10px; /* Adjust the space between title and amount */
+}
+
+.total-amount .currency {
+  font-size: 0.8em; /* Smaller text for the currency */
+  margin-left: 5px; /* Space between the price and the currency */
+}

@@ -1,0 +1,44 @@
+<template>
+        <lightning-card >
+            <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-3 slds-size_x-small slds-var-m-horizontal_medium">
+                    <lightning-combobox
+                        label="Catégorie : "
+                        value={selectedCategory}
+                        options={categoryOptions}
+                        onchange={handleCategoryChange}
+                    ></lightning-combobox>
+                </div>
+
+               <div class="slds-col slds-size_1-of-4 slds-size_x-small slds-var-m-horizontal_medium">
+                <div class="slds-grid slds-wrap">
+                    <lightning-input
+                        label="Prix : "
+                        type="range"
+                        name="priceRange"
+                        min="1"
+                        max="100000"
+                        value={selectedPrice}
+                        step="50"
+                        onchange={handlePriceChange}
+                    ></lightning-input>
+                    <span class="slds-m-left_x-small">0-{selectedPrice}</span>
+                </div>
+            </div>
+
+                <div class="slds-col slds-size_1-of-3 slds-size_x-small slds-var-m-horizontal_medium">
+                    <lightning-combobox
+                        label="Disponibilité : "
+                        value={selectedAvailability}
+                        options={availabilityOptions}
+                        onchange={handleAvailabilityChange}
+                    ></lightning-combobox>
+                </div>
+            </div>
+
+                <!-- <div class="slds-text-align_right">
+                    <lightning-button label="Rechercher" onclick={handleSearchClick}></lightning-button>
+                </div>
+             -->
+        </lightning-card>
+</template>

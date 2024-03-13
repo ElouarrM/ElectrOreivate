@@ -1,0 +1,50 @@
+<template>
+    <lightning-card title="" icon-name="utility:checkout">
+        <!-- Utiliser des icônes pour le tri -->
+        <div class="slds-text-align_right">
+            <lightning-icon icon-name="utility:arrowup" size="small" onclick={handleSortAsc}></lightning-icon>
+            <lightning-icon icon-name="utility:arrowdown" size="small" onclick={handleSortDesc}></lightning-icon>
+        </div>
+
+
+        <template for:each={basketProducts} for:item="products">
+            <div key={products.product.Id} class="slds-p-around_medium slds-border_bottom">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-size_2-of-12">
+                        <img src={products.product.DisplayUrl} alt={products.product.Name} class="product-image" />
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-p-left_medium">
+                        <h3>{products.product.Name}</h3>
+                        <lightning-formatted-number value={products.price} format-style="currency" currency-code="MAD"
+                            maximum-fraction-digits="2"></lightning-formatted-number>
+                        <p class="slds-text-body_smal" id="qty">Quantity: {products.addedQty}</p>
+                        <p class="slds-text-body_smal" id="subtotal"> subtotal: <lightning-formatted-number
+                                value={products.sousTotal} format-style="currency" currency-code="MAD"
+                                maximum-fraction-digits="2"></lightning-formatted-number>
+                        </p>
+                    </div>
+
+                    <div class="slds-flex">
+                        <lightning-button-icon icon-name="utility:add" size="small" alternative-text="Add"
+                            onclick={incrementQuantity} data-value={products.product.Id}></lightning-button-icon>
+                        <p class="slds-m-horizontal_small">{products.addedQty}</p>
+                        <lightning-button-icon icon-name="utility:dash" size="small" alternative-text="Minus"
+                            onclick={decrementQuantity} data-value={products.product.Id}></lightning-button-icon>
+                    </div>                  
+                </div>
+            </div>
+        </template>
+
+    </lightning-card>
+
+    <lightning-card class="slds-p-around_medium">
+        <lightning-input class="slds-size_3-of-4 test" label=" Code Coupon" placeholder="entrer un code coupon"
+            value={couponCode} onchange={handleCouponCodeChange}></lightning-input>
+        <div class="slds-text-align_right test">
+            <lightning-button label="Appliquer" onclick={applyCoupon}></lightning-button>
+        </div>
+    </lightning-card>
+
+
+    <c-basket-summary basket-products={basketProducts} coupon-value={couponValue}></c-basket-summary>
+</template>

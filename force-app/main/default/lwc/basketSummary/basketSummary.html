@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="" icon-name="utility:summary">
+        <div class="slds-m-around_medium">
+            <template if:true={couponValue}>
+                <div class="total-amountC">
+                    <span>Total Before Discount</span>
+                    <lightning-formatted-number value={totalAmountBeforeDiscount} format-style="currency"
+                        currency-code="MAD" maximum-fraction-digits="2"></lightning-formatted-number>
+                </div>
+                <div class="discount">
+                    <span>Discount</span>
+                    <lightning-formatted-number value={discount} format-style="currency" currency-code="MAD"
+                        maximum-fraction-digits="2"></lightning-formatted-number>
+                </div>
+                <div class="total-amount ">
+                    <span>Total After Discount</span>
+                    <lightning-formatted-number value={totalAmountAfterDiscount} format-style="currency"
+                        currency-code="MAD" maximum-fraction-digits="2"></lightning-formatted-number>
+                </div>
+            </template>
+
+            <template if:false={couponValue}>
+                <div class="total-amount">
+                    <span class="title">Total </span>
+                    <lightning-formatted-number value={totalAmount} format-style="currency" currency-code="MAD"
+                        maximum-fraction-digits="2"></lightning-formatted-number>
+                </div>
+            </template>
+        </div>
+        <div class="slds-align_absolute-center slds-size_2-of-2">
+            <button class=" total-amountD" onclick={handleClick}>Payer</button>
+        </div>
+
+    </lightning-card>
+</template>

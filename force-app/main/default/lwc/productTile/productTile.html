@@ -1,0 +1,31 @@
+<template>
+    <div  class={tileClass} >        
+                <div >
+                    <img  class="image" src={product.product.DisplayUrl} />
+                </div>
+                     <h1 class="title">{product.product.Name}</h1> 
+                    <div  class="priceTitle">
+                        <lightning-formatted-number value={product.price} 
+                                        format-style="currency" 
+                                        currency-code="MAD" 
+                                        maximum-fraction-digits="2"
+                                    >
+                        </lightning-formatted-number>  
+                                
+                     </div>
+
+                      <div>
+                        <p>{product.product.Quantity__c} unités restantes </p>
+                                          <!-- value={addedQty}  -->
+                        <lightning-input 
+                                          type="text" 
+                                          onchange={handleQuantity}
+                                          placeholder="Enter a quantity">
+                      </lightning-input>
+                    </div>  
+
+        <lightning-button label="Ajouter" title="titleName" onclick={publishHandler} disabled={disableButton}></lightning-button>
+               
+        </div>
+
+</template>
